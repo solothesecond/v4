@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+   <link rel="stylesheet" href="/css/index.css">
+   <link rel="icon" type="image/x-icon" href="https://www.google.com/favicon.ico">
+   <script src="/particles.js"></script>
+   <script src="/app.js"></script>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+   <title>calculator - Google Search</title>
+   <meta name="title" content="Szvy Central" />
+    <meta name="description" content="Szvy Central is one of the best websites for people to play games online." />
+    <meta name="keywords" content="unblocked games, unblocked, proxy, pr0xy, unbl0cked games, games, game, fnaf, minecraft, pr0xy, games unblocked, unbl0cked, fortnite, sizzle central, szvy central, szvy, szvy central games, savoy central, savoy, central games, savoy central games, unblocked gxmes, fun games, educational games, education, classroom6x, math games, unblocked games google sites, google sites, google sites unblocked games, html unblocked games, github unblocked games, school unblocked games, github games, school games, html games, free games, online games, coolfunscience, science games, math games, google sites, google sites games, games google sites, sitesgoogle games, games sitesgoogle, githubio games, github io games, szvy github games, szvycentral.pages.dev, szvycentral.netlify.app, szvycentral.vercel.app, tidym.vercel.app, subtoszvy, mathplayground, games unblocked, youtube unblocked, tiktok unblocked, youtube, tiktok, how to play unblocked games at school, games, online games, fortnite games unblocked, nowgg unblocked, nowgg alt links, nowgg, geforce now unblocked, geforcenow, geforce unblocked, geforcenow unblocked, geforce unblocked, play games, unblocked games for school, skibidi szvy">
+    <meta name="theme-color" content="#0f0f0f">
+    <meta name="msapplication-TileColor" content="#0f0f0f">
+    <meta property="image" content="/assets/logo.png">
+    <meta property="og:image" content="/assets/logo.png">
+    <script src="/js/usesettings.js"></script>
+    <script src="/js/panic.js"></script>
+</head>
+<body>
+   <div id="particles-js"></div>
+   <div class="navbar">
+    <a href="/"><i class="fa-solid fa-house"></i></a>
+    <a href="/pages/gxmez.html"><i class="fas fa-gamepad"></i></a>
+    <a href="/pages/4pps.html"><i class="fas fa-border-all"></i></a>
+    <a href="/pages/ai.html"><i class="fa-solid fa-robot"></i></a>
+    <a href="/pages/settings.html"><i class="fa-solid fa-gear"></i></a>
+    <a href="/pages/extra.html"><i class="fas fa-plus"></i></a>
+    <a href="/extra/discord.html"><i class="fa-brands fa-discord"></i></a>
+</div>
+   <div id="content">
+      <h1 id="title" class="hometitle">romany V4</h1>
+      <form id="uv-form">
+        <input id="uv-search-engine" value="https://duckduckgo.com/?t=h_&q=%s" type="hidden"> 
+        <input id="uv-address" type="text" placeholder="Search freely with Romans Browser..." class="form__input" autocomplete="off">
+         </div>
+         <div class="desc left-margin">
+            <p id="uv-error"></p>
+            <pre id="uv-error-code"></pre>
+         </div>
+         <script src="/szvy/bundle.js" defer></script>
+         <script src="/szvy/config.js?cdn" defer></script>
+         <script>
+            document.addEventListener("DOMContentLoaded", async function () {
+              console.log(`
+              /$$$$$$$ /$$$$$$$$ /$$    /$$ /$$   /$$
+             /$$_____/|____ /$$/|  $$  /$$/| $$  | $$
+            |  $$$$$$    /$$$$/  \\  $$/$$/ | $$  | $$
+             \\____  $$  /$$__/    \\  $$$/  | $$  | $$
+             /$$$$$$$/ /$$$$$$$$   \\  $/   |  $$$$$$$
+            |_______/ |________/    \\_/     \\____  $$
+                                            /$$  | $$
+                                           |  $$$$$$/
+                                            \\______/
+            `);
+          
+              if ('serviceWorker' in navigator) {
+                try {
+                  await navigator.serviceWorker.register("/szvy/sw.js", { scope: "/szvy/" });
+                } catch (error) {
+                  console.error("sw couldnt register:", error);
+                }
+              }
+          
+              const form = document.querySelector("#uv-form");
+              const input = document.querySelector("#uv-address");
+          
+              form.addEventListener("submit", (event) => {
+                event.preventDefault();
+                let url = input.value.trim();
+                if (!isUrl(url)) {
+                  url = "https://duckduckgo.com/&q%3D" + encodeURIComponent(url);
+                } else if (!(url.startsWith("https://") || url.startsWith("http://"))) {
+                  url = "http://" + url;
+                }
+                const encodedUrl = __uv$config.prefix + __uv$config.encodeUrl(url);
+                window.location.href = "math.html?u=" + (encodedUrl);
+              });
+          
+              loadCustomLinks();
+            });
+          
+            function isUrl(val = "") {
+              return /^http(s?):\/\//.test(val) || (val.includes(".") && val.slice(0, 1) !== " ");
+            }
+          
+            function loadCustomLinks() {
+              var quicklinkContainer = document.getElementById('quicklink-container');
+              var savedLinks = JSON.parse(localStorage.getItem('customLinks')) || [];
+              savedLinks.forEach(function(link) {
+                addCustomLinkToUI(link.url, link.image, link.name);
+              });
+            }
+          
+            function addCustomLinkToUI(customUrl, customImage, customName) {
+              var quicklinkContainer = document.getElementById('quicklink-container');
+              var newQuicklink = document.createElement('a');
+              newQuicklink.className = 'quicklink-button';
+              newQuicklink.href = 'embed.html#' + customUrl;
+              newQuicklink.innerHTML = '<img src="' + customImage + '" alt="' + customName + '"><p>' + customName + '</p>';
+              quicklinkContainer.insertBefore(newQuicklink, document.getElementById('custom-site-container'));
+            }
+          
+            document.getElementById('custom-site-container').addEventListener('click', function() {
+              var customUrl = prompt("Enter the URL (https required):");
+              if (!customUrl) {
+                alert("url is required!!");
+                return;
+              }
+              var customImage = prompt("Enter the image URL for the site:");
+              if (!customImage) {
+                alert("image url is required!!");
+                return;
+              }
+              var customName = prompt("Enter the name for the site:");
+              if (!customName) {
+                alert("site name is required!!");
+                return;
+              }
+              var newLink = {
+                url: customUrl,
+                image: customImage,
+                name: customName
+              };
+              var savedLinks = JSON.parse(localStorage.getItem('customLinks')) || [];
+              savedLinks.push(newLink);
+              localStorage.setItem('customLinks', JSON.stringify(savedLinks));
+              addCustomLinkToUI(customUrl, customImage, customName);
+            });
+          </script>
+          
+   </div>
+</body>
+</html>
